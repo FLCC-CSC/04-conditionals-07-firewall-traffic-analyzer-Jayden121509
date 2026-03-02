@@ -1,8 +1,8 @@
 # FILE NAME - firewall_traffic_analyzer.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Jayden Blair
+# DATE: 3/2/26
+# BRIEF DESCRIPTION:  Firewall Traffic Analyzer that assesses the risk level of network traffic based on port number and data transfer size.
 
 
 
@@ -15,6 +15,26 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
+print("=== Network Traffic Security Analyzer ===")
+
+
+port_number = int(input("Enter the port number (e.g., 80, 22, 443, 3389): "))
+transfer_size = int(input("Enter the data transfer size in megabytes (MB): "))
+
+if (port_number == 22 or port_number == 3389) and transfer_size >= 100:
+    risk_assessment = "HIGH RISK: Potential unauthorized remote access detected!"
+elif port_number == 80 and transfer_size > 100:
+    risk_assessment = "MEDIUM RISK: Large unencrypted data transfer detected."
+elif port_number == 443:
+    risk_assessment = "LOW RISK: Secure encrypted transfer detected."
+else:
+    risk_assessment = "UNKNOWN: Unrecognized traffic pattern."
+
+
+print("FIREWALL LOG:")
+print(f"Port: {port_number}, Transfer Size: {transfer_size} MB")
+print(f"Risk Assessment: {risk_assessment}")
+print("------------------------")
 
 
 
@@ -50,10 +70,10 @@ Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.
 === Network Traffic Security Analyzer ===
 
 Enter the port number (e.g., 80, 22, 443, 3389): 22
-Enter the data transfer size in megabytes (MB): 12
+Enter the data transfer size in megabytes (MB): 1200
 
 FIREWALL LOG:
-Port: 22, Transfer Size: 12 MB
+Port: 22, Transfer Size: 1200 MB
 Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!
 ------------------------
 '''
@@ -90,8 +110,8 @@ Risk Assessment: UNKNOWN: Unrecognized traffic pattern.
 
 1. Did you get tripped up using the `or` or `and` operators? If so, how?
 
-
-
+Yes, I had trouble at first trying to understand how to use them together properly.
+I didn't quite understand the difference between them and how they would affect the logic of my code.
 
 
 
